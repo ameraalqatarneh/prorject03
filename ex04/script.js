@@ -16,12 +16,16 @@ function addTask() {
 
     let li = document.createElement("li");
 
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.classList.add("task-checkbox");
+
     let span = document.createElement("span");
     span.textContent = taskText;
     span.classList.add("task-text");
 
-    span.addEventListener("click", function () {
-        li.classList.toggle("completed");
+    checkbox.addEventListener("change", function () {
+        li.classList.toggle("completed", checkbox.checked);
     });
 
     let deleteButton = document.createElement("button");
@@ -33,6 +37,7 @@ function addTask() {
         updateCount();
     });
 
+    li.appendChild(checkbox);
     li.appendChild(span);
     li.appendChild(deleteButton);
 

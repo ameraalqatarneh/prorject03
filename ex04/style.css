@@ -64,4 +64,12 @@ button:hover {
 .deleteButton {
     background-color: #dc2626;
 }
+li.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
 
+.task-checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+}
